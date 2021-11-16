@@ -1,0 +1,14 @@
+match	n
+tahun	45913
+hari	25839
+waktu	19719
+bulan	11301
+masa	8136
+jam	5522
+menit	4953
+periode	2378
+era	1538
+detik	1338
+momen	1126
+zaman	1103
+jaman	155
