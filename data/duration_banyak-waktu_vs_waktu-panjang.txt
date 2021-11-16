@@ -1,0 +1,3 @@
+phrases	n	perc
+banyak waktu	112	73.68421052631578
+waktu panjang	40	26.31578947368421

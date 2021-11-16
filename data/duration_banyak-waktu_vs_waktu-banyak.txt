@@ -1,0 +1,3 @@
+phrases	n	perc
+banyak waktu	112	94.11764705882352
+waktu banyak	7	5.88235294117647
