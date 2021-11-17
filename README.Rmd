@@ -1,7 +1,10 @@
 ---
 output: github_document
-title: "Supplementary materials for *The Spatial Construal of TIME in Indonesian: Evidence from Language and Gesture*"
-author: '*by* [Gede Primahadi Wijaya Rajeg](https://udayananetworking.unud.ac.id/lecturer/880-gede-primahadi-wijaya-rajeg) <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>, [Poppy Siahaan](https://orient.phil-fak.uni-koeln.de/en/personen/wissenschaftliche-mitarbeiterinnen/dr-poppy-siahaan), [Alice Gaby](https://research.monash.edu/en/persons/alice-gaby) <a itemprop="sameAs" content="https://orcid.org/0000-0003-4637-5513" href="https://orcid.org/0000-0003-4637-5513" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
+title: "Supplementary materials for a paper on the SPACE-TIME mapping in Indonesian based on linguistic and gestural data"
+author: '*by* [Gede Primahadi Wijaya Rajeg](https://udayananetworking.unud.ac.id/lecturer/880-gede-primahadi-wijaya-rajeg) <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>, [Poppy Siahaan](https://orient.phil-fak.uni-koeln.de/en/personen/wissenschaftliche-mitarbeiterinnen/dr-poppy-siahaan), & [Alice Gaby](https://research.monash.edu/en/persons/alice-gaby) <a itemprop="sameAs" content="https://orcid.org/0000-0003-4637-5513" href="https://orcid.org/0000-0003-4637-5513" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
+bibliography: "biblioReadMe.bib"
+csl: "linguistics.csl"
+link-citations: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -21,4 +24,26 @@ knitr::opts_chunk$set(
 
 # Overview
 
-This repository hosts the dataset and R codes used in the paper submitted to the journal for the linguistic society of Indonesia, [*Linguistik Indonesia*](http://ojs.linguistik-indonesia.org/index.php/linguistik_indonesia), under the title *The Spatial Construal of TIME in Indonesian: Evidence from Language and Gesture*.
+This is an [RStudio-project](https://r4ds.had.co.nz/workflow-projects.html)^[For another overview on the RStudio Project, see this blogpost from RStudio: https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects] repository hosting the dataset and R codes used in the paper accepted for publication in [*Linguistik Indonesia*](http://ojs.linguistik-indonesia.org/index.php/linguistik_indonesia), the official journal for [*Masyarakat Linguistik Indonesia*](https://www.mlindonesia.org/) (MLI) (the Linguistic Society of Indonesia). The paper reports on a [project on the spatio-temporal metaphor in Indonesian](https://udayananetworking.unud.ac.id/lecturer/research/880-gede-primahadi-wijaya-rajeg/spatial-construal-of-time-in-indonesian-language-and-co-speech-gestures-132) based on investigating evidence from Indonesian language corpus and spontaneous co-speech gestural data. 
+
+The earlier version of the paper has been presented at (i) the [*15^th^ International Cognitive Linguistics Conference*](https://iclc2019.site/general-theme-session-presentations/#fri-07-03) (ICLC-15) in August 2019 in Nishinomiya, Japan [@rajeg_linguistic_2019], and (ii) *Kongres Internasional Masyarakat Linguistik Indonesia 2021* (KIMLI 2021) [@rajeg_spatial_2021]. We thank the participants at these conferences for their feedback and comments. We are also grateful for the travel grant awarded by the [*International Cognitive Linguistics Association*](https://www.cognitivelinguistics.org/en) (ICLA) for our presentation at ICLC-15.
+
+The early phase of the project was partly funded by Monash University, Australia through the PhD research scholarships scheme awarded to Gede Primahadi Wijaya Rajeg: (i) *Monash International Postgraduate Research Scholarships (MIPRS)*, and (ii) *Monash Graduate Scholarships* (MGS). The pre-processing stage of the linguistic data was supported by the computing facility at Monash University, Australia via the [*MonARCH High Performance Computing Cluster*](https://docs.monarch.erc.monash.edu/MonARCH/aboutMonArch.html).
+
+# Materials
+
+- The R codes for the quantitative analyses and data visualisations are contained in the [`main-analysis-code.R`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/blob/main/R-scripts/main-analysis-code.R) file in the [`R-scripts`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/tree/main/R-scripts) directory.
+
+- The R codes also make use of functions from the [`tidyverse`](https://www.tidyverse.org/) family of R packages [@wickham_r_2017; @wickham_welcome_2019]. Users are required to install the tidyverse collection of packages in order to run (some parts of) the code.
+
+- The [`data`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/tree/main/data) directory contains the main (pre-processed) linguistic data, annotation notes for the gestural data, and the derived tabular data.
+
+- The [`figures`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/tree/main/figures) directory contains all statistical graphics used in the paper.
+
+# R session info
+
+```{r sessinfo}
+devtools::session_info()
+```
+
+# References
