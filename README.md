@@ -16,15 +16,17 @@ Siahaan](https://orient.phil-fak.uni-koeln.de/en/personen/wissenschaftliche-mita
 work is licensed under a
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative
 Commons Attribution-NonCommercial 4.0 International License</a>.
+[![](https://img.shields.io/badge/doi-10.17605/OSF.IO/FJE6K-green.svg)](https://doi.org/10.17605/OSF.IO/FJE6K)
 
 <!-- badges: end -->
 
 # Overview
 
 This is an
-[RStudio-project](https://r4ds.had.co.nz/workflow-projects.html)[1]
-repository hosting the dataset and R codes used in the paper accepted
-for publication in [*Linguistik
+[RStudio-project](https://r4ds.had.co.nz/workflow-projects.html)
+repository ([Rajeg, Siahaan & Gaby 2021b](#ref-rajeg_data_2021)) hosting
+the dataset and R codes used in the paper accepted for publication in
+[*Linguistik
 Indonesia*](http://ojs.linguistik-indonesia.org/index.php/linguistik_indonesia),
 the official journal for [*Masyarakat Linguistik
 Indonesia*](https://www.mlindonesia.org/) (MLI) (the Linguistic Society
@@ -34,17 +36,23 @@ Indonesian](https://udayananetworking.unud.ac.id/lecturer/research/880-gede-prim
 based on investigating evidence from Indonesian language corpus and
 spontaneous co-speech gestural data.
 
+> How to cite this repository — Rajeg, Gede Primahadi Wijaya, Poppy
+> Siahaan & Alice Gaby. 2021. Data and R codes for analyses on the
+> spatial construal of TIME in Indonesian language and co-speech
+> gestures. *Open Science Framework (OSF)*. OSF.
+> <https://doi.org/10.17605/OSF.IO/FJE6K>. <https://osf.io/fje6k/>.
+
 The earlier version of the paper has been presented at (i) the
 [*15<sup>th</sup> International Cognitive Linguistics
 Conference*](https://iclc2019.site/general-theme-session-presentations/#fri-07-03)
 (ICLC-15) in August 2019 in Nishinomiya, Japan ([Rajeg, Siahaan & Gaby
 2019](#ref-rajeg_linguistic_2019)), and (ii) *Kongres Internasional
 Masyarakat Linguistik Indonesia 2021* (KIMLI 2021) ([Rajeg, Siahaan &
-Gaby 2021](#ref-rajeg_spatial_2021)). We thank the participants at these
-conferences for their feedback and comments. We are also grateful for
-the travel grant awarded by the [*International Cognitive Linguistics
-Association*](https://www.cognitivelinguistics.org/en) (ICLA) for our
-presentation at ICLC-15.
+Gaby 2021a](#ref-rajeg_spatial_2021)). We thank the participants at
+these conferences for their feedback and comments. We are also grateful
+for the travel grant awarded by the [*International Cognitive
+Linguistics Association*](https://www.cognitivelinguistics.org/en)
+(ICLA) for our presentation at ICLC-15.
 
 The early phase of the project was partly funded by Monash University,
 Australia through the PhD research scholarships scheme awarded to Gede
@@ -159,10 +167,20 @@ doi:[10.26180/5c660c9786cef](https://doi.org/10.26180/5c660c9786cef).
 
 <div id="ref-rajeg_spatial_2021" class="csl-entry">
 
-Rajeg, Gede Primahadi Wijaya, Poppy Siahaan & Alice Gaby. 2021. The
+Rajeg, Gede Primahadi Wijaya, Poppy Siahaan & Alice Gaby. 2021a. The
 spatial construal of TIME in Indonesian: Evidence from language and
 gesture. Paper. Kongres Internasional Masyarakat Linguistik Indonesia
 2021 (KIMLI 2021), Online. <https://youtu.be/Onkfr8xVeBg>.
+
+</div>
+
+<div id="ref-rajeg_data_2021" class="csl-entry">
+
+Rajeg, Gede Primahadi Wijaya, Poppy Siahaan & Alice Gaby. 2021b. Data
+and R codes for analyses on the spatial construal of TIME in Indonesian
+language and co-speech gestures. *Open Science Framework (OSF)*.
+doi:[10.17605/OSF.IO/FJE6K](https://doi.org/10.17605/OSF.IO/FJE6K).
+<https://osf.io/fje6k/> (17 November, 2021).
 
 </div>
 
@@ -184,7 +202,3 @@ O’Reilly. <http://r4ds.had.co.nz/> (7 March, 2017).
 </div>
 
 </div>
-
-[1] For another overview on the RStudio Project, see this blogpost from
-RStudio:
-<https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects>

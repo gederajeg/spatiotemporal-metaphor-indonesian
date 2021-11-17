@@ -18,13 +18,16 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>. [![](https://img.shields.io/badge/doi-10.17605/OSF.IO/FJE6K-green.svg)](https://doi.org/10.17605/OSF.IO/FJE6K)
 
 <!-- badges: end -->
 
 # Overview
 
-This is an [RStudio-project](https://r4ds.had.co.nz/workflow-projects.html)^[For another overview on the RStudio Project, see this blogpost from RStudio: https://support.rstudio.com/hc/en-us/articles/200526207-Using-RStudio-Projects] repository hosting the dataset and R codes used in the paper accepted for publication in [*Linguistik Indonesia*](http://ojs.linguistik-indonesia.org/index.php/linguistik_indonesia), the official journal for [*Masyarakat Linguistik Indonesia*](https://www.mlindonesia.org/) (MLI) (the Linguistic Society of Indonesia). The paper reports on a [project on the spatio-temporal metaphor in Indonesian](https://udayananetworking.unud.ac.id/lecturer/research/880-gede-primahadi-wijaya-rajeg/spatial-construal-of-time-in-indonesian-language-and-co-speech-gestures-132) based on investigating evidence from Indonesian language corpus and spontaneous co-speech gestural data. 
+This is an [RStudio-project](https://r4ds.had.co.nz/workflow-projects.html) repository [@rajeg_data_2021] hosting the dataset and R codes used in the paper accepted for publication in [*Linguistik Indonesia*](http://ojs.linguistik-indonesia.org/index.php/linguistik_indonesia), the official journal for [*Masyarakat Linguistik Indonesia*](https://www.mlindonesia.org/) (MLI) (the Linguistic Society of Indonesia). The paper reports on a [project on the spatio-temporal metaphor in Indonesian](https://udayananetworking.unud.ac.id/lecturer/research/880-gede-primahadi-wijaya-rajeg/spatial-construal-of-time-in-indonesian-language-and-co-speech-gestures-132) based on investigating evidence from Indonesian language corpus and spontaneous co-speech gestural data.
+
+> How to cite this repository --- Rajeg, Gede Primahadi Wijaya, Poppy Siahaan & Alice Gaby. 2021. Data and R codes for analyses on the spatial construal of TIME in Indonesian language and co-speech gestures. *Open Science Framework (OSF)*. OSF. https://doi.org/10.17605/OSF.IO/FJE6K. https://osf.io/fje6k/.
+
 
 The earlier version of the paper has been presented at (i) the [*15^th^ International Cognitive Linguistics Conference*](https://iclc2019.site/general-theme-session-presentations/#fri-07-03) (ICLC-15) in August 2019 in Nishinomiya, Japan [@rajeg_linguistic_2019], and (ii) *Kongres Internasional Masyarakat Linguistik Indonesia 2021* (KIMLI 2021) [@rajeg_spatial_2021]. We thank the participants at these conferences for their feedback and comments. We are also grateful for the travel grant awarded by the [*International Cognitive Linguistics Association*](https://www.cognitivelinguistics.org/en) (ICLA) for our presentation at ICLC-15.
 
