@@ -1,9 +1,9 @@
-library(corplingr)
-library(tidyverse)
+# library(corplingr) # see https://gederajeg.github.io/corplingr/
+library(tidyverse) # see https://www.tidyverse.org/
 
 # Casasanto et al's re-analysis (appearing in the INTRODUCTION of our paper) ========================
 
-# If you have not installed corplingr, install it from github using the remotes package; uncomment the codes in lines 5, 6, and 7 below
+# If you have not installed corplingr, install it from github using the remotes package; uncomment the codes in lines 7, 8, and 9 below
 # library(remotes)
 # install_github("gederajeg/corplingr")
 # library(corplingr)
@@ -223,22 +223,32 @@ dev.off()
 
 
 # Gesture Data Analyses ==========================
+## load the gesture annotation notes
+gesture_notes <- readr::read_lines("data/temporal_gesture_annotation_notes.txt")
+
 ## prepare the data
-sequential_gestures <- 6 # cell D62 in the Excel Sheet file
-deictic_gestures <- c(lateral_gestures = 19, # cell E52 in Excel Sheet file
-                      sagittal_gestures = 11) # cell E46 in Excel Sheet file
+sequential_lateral <- length(grep("sequential-lateral", gesture_notes))
+sequential_sagittal <- length(grep("sequential-sagittal", gesture_notes))
+sequential_gestures <- sum(sequential_lateral, sequential_sagittal) # see cell D63 in the Excel Sheet file
+
+deictic_lateral_future <- length(grep("deictic-lateral-future", gesture_notes))
+deictic_lateral_present <- length(grep("deictic-lateral-present", gesture_notes))
+deictic_lateral_past <- length(grep("deictic-lateral-past", gesture_notes))
+deictic_lateral_gestures <- sum(deictic_lateral_future, deictic_lateral_present, deictic_lateral_past) # see cell E52 in Excel Sheet file
+
+deictic_sagittal_future <- length(grep("deictic-sagittal-future", gesture_notes))
+deictic_sagittal_present <- length(grep("deictic-sagittal-present", gesture_notes))
+deictic_sagittal_past <- length(grep("deictic-sagittal-past", gesture_notes))
+deictic_sagittal_gestures <- sum(deictic_sagittal_future, deictic_sagittal_present, deictic_sagittal_past) # see cell E46 in Excel Sheet file
+
+deictic_gestures <- c(lateral_gestures = deictic_lateral_gestures, 
+                      sagittal_gestures = deictic_sagittal_gestures) 
 deictic_gestures
+sum(deictic_gestures)
 round(prop.table(deictic_gestures), 2)
 
-## distribution of deictic vs. sequential
-round(prop.table(c(sum(deictic_gestures), sequential_gestures)), 2)
-binom.test(c(sum(deictic_gestures), sequential_gestures))$p.value
-binom.test(c(sum(deictic_gestures), sequential_gestures))$p.value < 0.001
-chisq.test(c(sum(deictic_gestures), sequential_gestures))
-chisq.test(c(sum(deictic_gestures), sequential_gestures))$p.value < 0.001
-
 ## graphical (barplot) representation (Figure 1 in the paper)
-png(filename = "figures/deictic_gestures_plot-1.png", width = 6, height = 5, units = "in", res = 300)
+png(filename = "figures/deictic_gestures_plot-1.png", width = 6, height = 5.5, units = "in", res = 300)
 deictic_bp <- barplot(prop.table(deictic_gestures), 
                       names.arg = gsub("_gestures", "", names(deictic_gestures)), 
                       main = "Types of gestural axes for the deictic time", 
@@ -257,16 +267,21 @@ chisq.test(deictic_gestures)$p.value < 0.05 # not significant different from cha
 binom.test(deictic_gestures[1], sum(deictic_gestures))$p.value # not significant different from chance (two-tailed)
 
 ## distribution of the axes across the element of deictic time (i.e. past, present, future)
-deictic_times_in_gestures <- c(past = 20, # cell I45 in Excel Sheet file
-                               present = 7, # cell J45 in Excel Sheet file
-                               future = 3) # cell K45 in Excel Sheet file
-sagittal <- c(past = 9, # cell I43 in Excel Sheet file
-              present = 1, # cell J43 in Excel Sheet file
-              future = 1) # cell K43 in Excel Sheet file
-lateral <- c(past = 11, # cell I44 in Excel Sheet file
-             present = 6, # cell J43 in Excel Sheet file
-             future = 2) # cell K43 in Excel Sheet file
-(deictic_across_axes <- t(rbind(lateral, sagittal)))
+# deictic_times_in_gestures <- c(past = 20, # cell H45 in Excel Sheet file
+#                                present = 7, # cell I45 in Excel Sheet file
+#                                future = 3) # cell J45 in Excel Sheet file
+# sagittal <- c(past = 9, # cell H43 in Excel Sheet file
+#               present = 1, # cell I43 in Excel Sheet file
+#               future = 1) # cell J43 in Excel Sheet file
+# lateral <- c(past = 11, # cell H44 in Excel Sheet file
+#              present = 6, # cell I43 in Excel Sheet file
+#              future = 2) # cell J43 in Excel Sheet file
+# (deictic_across_axes <- t(rbind(lateral, sagittal)))
+deictic_across_axes <- cbind(past = c(deictic_sagittal_past, deictic_lateral_past), 
+                             present = c(deictic_sagittal_present, deictic_lateral_present), 
+                             future = c(deictic_sagittal_future, deictic_lateral_future))
+(rownames(deictic_across_axes) <- c("sagittal", "lateral"))
+(deictic_across_axes <- t(deictic_across_axes)[, c(2, 1)])
 prop.table(deictic_across_axes, 2)
 
 ## two-tailed fisher exact
@@ -277,7 +292,7 @@ png(filename = "figures/deictic_gestures_plot-2.png", width = 6.5, height = 5, u
 deictic_bp1 <- barplot(prop.table(deictic_across_axes, 2), 
                        beside = TRUE, 
                        legend.text = TRUE, 
-                       args.legend = list(x = "topright", bty = "n"), 
+                       args.legend = list(x = "topleft", bty = "n"), 
                        ylab = "Proportion",
                        xlab = "Axis",
                        ylim = c(0, .9),
@@ -290,21 +305,37 @@ text(deictic_bp1,
 dev.off()
 
 ## distribution of the deictic time in relation to the front-back vs. left-right axes
-axis <- c(rep("sagittal", 4), rep("lateral", 4))
-time <- c("past", "past", "future", "present", "present", "future", "past", "past")
-position <- c("behind", "front", "front", "centre", "centre", "right", "left", "right")
-n <- c(8, 1, 1, 1, 6, 2, 9, 2)
-(deictic_position <- data.frame(axis, time, position, n))
+# axis <- c(rep("sagittal", 4), rep("lateral", 4))
+# time <- c("past", "past", "future", "present", "present", "future", "past", "past")
+# position <- c("behind", "front", "front", "centre", "centre", "right", "left", "right")
+# n <- c(8, 1, 1, 1, 6, 2, 9, 2)
+# (deictic_position <- data.frame(axis, time, position, n))
+deictic_position_rgx <- "(sagittal|lateral)-(past|future|present)-(behind|front|centre|left|right)"
+m <- stringr::str_extract_all(gesture_notes, deictic_position_rgx, simplify = TRUE)
+m <- m[nzchar(m)]
+m_df <- as.data.frame(table(m))
+deictic_position <- m_df %>% 
+  arrange(desc(m)) %>% 
+  rename(search_pattern = m, n = Freq) %>% 
+  extract(col = search_pattern, 
+          into = c("axis", "time", "position"), 
+          regex = "([^-]+)-([^-]+)-([^-]+)",
+          remove = TRUE)
+deictic_position
 
 ### Binomial for PAST IS BEHIND vs. PAST IS FRONT
 (past_behind_front <- pull(filter(deictic_position, time == "past", axis == "sagittal"), n))
 (names(past_behind_front) <- pull(filter(deictic_position, time == "past", axis == "sagittal"), position))
+round(prop.table(past_behind_front), 2)
+round(prop.table(past_behind_front)*100, 2)
+chisq.test(past_behind_front)
+chisq.test(past_behind_front)$p.value < 0.01
 binom.test(past_behind_front)
 binom.test(past_behind_front)$p.value < 0.05
 
 ### added from the gesture that talks about the PRESENT but before that moves their hands laterally.
-past_left <- 4
-past_right <- 1
+past_left <- length(grep("\\<past-left\\/\\>", gesture_notes, perl = TRUE))
+past_right <- length(grep("\\<past-right\\/\\>", gesture_notes, perl = TRUE))
 
 ### combine all past lateral gestures
 past_left_all <- past_left + pull(filter(deictic_position, time == "past", position == "left"), n)
@@ -312,15 +343,16 @@ names(past_left_all) <- "leftward"
 past_right_all <- past_right + pull(filter(deictic_position, time == "past", position == "right"), n)
 names(past_right_all) <- "rightward"
 
+c(past_left_all, past_right_all)
 round(prop.table(c(past_left_all, past_right_all)), 2)
-
-### two-tailed binomial test for the distribution of past in left-vs-right axis
-round(binom.test(past_left_all, sum(past_left_all, past_right_all))$p.value, 3)
-round(binom.test(past_left_all, sum(past_left_all, past_right_all))$p.value, 3) < 0.05
 
 ### two-tailed chi-square for goodness-of-fit for the distribution of past in left-vs-right axis
 chisq.test(c(past_left_all, past_right_all))
-chisq.test(c(past_left_all, past_right_all))$p.value < 0.05
+chisq.test(c(past_left_all, past_right_all))$p.value < 0.01
+
+### two-tailed binomial test for the distribution of past in left-vs-right axis
+round(binom.test(past_left_all, sum(past_left_all, past_right_all))$p.value, 3)
+round(binom.test(past_left_all, sum(past_left_all, past_right_all))$p.value, 3) < 0.01
 
 ### graphical (barplot) representation (Figure 3 in the paper)
 lateral_past_data <- c(past_left_all, past_right_all)
@@ -336,3 +368,11 @@ text(lateral_past_bp, c(.4, .1), labels = paste("N=", lateral_past_data, sep = "
 abline(h = 1/2, col = "red", lty = 2)
 text(x = 1.9, y = 0.53, labels = "Expected proportion", col = "red")
 dev.off()
+
+## distribution of deictic vs. sequential
+c(sum(deictic_gestures), sequential_gestures)
+round(prop.table(c(sum(deictic_gestures), sequential_gestures)), 2)
+binom.test(c(sum(deictic_gestures), sequential_gestures))$p.value
+binom.test(c(sum(deictic_gestures), sequential_gestures))$p.value < 0.001
+chisq.test(c(sum(deictic_gestures), sequential_gestures))
+chisq.test(c(sum(deictic_gestures), sequential_gestures))$p.value < 0.001
