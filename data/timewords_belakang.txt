@@ -1,0 +1,6 @@
+ngram	w1	w2
+tahun_belakang	tahun	belakang
+tahun_belakang	tahun	belakang
+sepekan_belakang	sepekan	belakang
+bulan_belakang	bulan	belakang
+tahun_belakang	tahun	belakang
