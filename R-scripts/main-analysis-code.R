@@ -62,12 +62,12 @@ chisq.test(phrases_group2)$stdres
 
 
 
-# compare proportion of "banyak waktu" vs. "waktu banyak"
+# compare proportion of "banyak waktu" vs. "panjang waktu"
 prop3 <- durations_count %>% 
-  filter(str_detect(node, "banyak")) %>% 
+  filter(node %in% c("banyak waktu", "panjang waktu")) %>% 
   mutate(perc = n/sum(n) * 100)
 prop3
-prop3 %>% select(phrases = node, n, perc) %>% write_tsv(file = "data/duration_banyak-waktu_vs_waktu-banyak.txt")
+prop3 %>% select(phrases = node, n, perc) %>% write_tsv(file = "data/duration_banyak-waktu_vs_panjang-waktu.txt")
 
 # chisqtest for prop3
 phrases_group3 <- prop3$n
@@ -76,6 +76,23 @@ chisq.test(phrases_group3)
 chisq.test(phrases_group3)$p.value < 0.001
 chisq.test(phrases_group3)$residuals
 chisq.test(phrases_group3)$stdres
+
+
+
+# compare proportion of "banyak waktu" vs. "waktu banyak"
+prop4 <- durations_count %>% 
+  filter(str_detect(node, "banyak")) %>% 
+  mutate(perc = n/sum(n) * 100)
+prop4
+prop4 %>% select(phrases = node, n, perc) %>% write_tsv(file = "data/duration_banyak-waktu_vs_waktu-banyak.txt")
+
+# chisqtest for prop4
+phrases_group4 <- prop4$n
+names(phrases_group4) <- prop4$node
+chisq.test(phrases_group4)
+chisq.test(phrases_group4)$p.value < 0.001
+chisq.test(phrases_group4)$residuals
+chisq.test(phrases_group4)$stdres
 
 
 
