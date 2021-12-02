@@ -67,17 +67,16 @@ Cluster*](https://docs.monarch.erc.monash.edu/MonARCH/aboutMonArch.html).
 
 -   The R codes for the quantitative analyses and data visualisations
     are contained in the
-    [`main-analysis-code.R`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/blob/main/R-scripts/main-analysis-code.R)
-    file in the
     [`R-scripts`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/tree/main/R-scripts)
     directory.
 
 -   The R codes also make use of functions from the
     [`tidyverse`](https://www.tidyverse.org/) family of R packages
     ([Wickham & Grolemund 2017](#ref-wickham_r_2017); [Wickham et al.
-    2019](#ref-wickham_welcome_2019)). Users are required to install the
-    tidyverse collection of packages in order to run (some parts of) the
-    code.
+    2019](#ref-wickham_welcome_2019)) and the
+    [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
+    package ([Neuwirth 2014](#ref-brewer2014)). Users are required to
+    install these packages in order to run the codes.
 
 -   The
     [`data`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/tree/main/data)
@@ -103,7 +102,7 @@ devtools::session_info()
 #>  collate  en_US.UTF-8                 
 #>  ctype    en_US.UTF-8                 
 #>  tz       Asia/Makassar               
-#>  date     2021-11-17                  
+#>  date     2021-12-02                  
 #> 
 #> ─ Packages ───────────────────────────────────────────────────────────────────
 #>  package     * version date       lib source        
@@ -153,6 +152,13 @@ devtools::session_info()
 # References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-brewer2014" class="csl-entry">
+
+Neuwirth, Erich. 2014. *RColorBrewer: ColorBrewer palettes*.
+<https://CRAN.R-project.org/package=RColorBrewer>.
+
+</div>
 
 <div id="ref-rajeg_linguistic_2019" class="csl-entry">
 

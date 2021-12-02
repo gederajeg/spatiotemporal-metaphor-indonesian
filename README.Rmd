@@ -35,9 +35,9 @@ The early phase of the project was partly funded by Monash University, Australia
 
 # Materials
 
-- The R codes for the quantitative analyses and data visualisations are contained in the [`main-analysis-code.R`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/blob/main/R-scripts/main-analysis-code.R) file in the [`R-scripts`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/tree/main/R-scripts) directory.
+- The R codes for the quantitative analyses and data visualisations are contained in the [`R-scripts`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/tree/main/R-scripts) directory.
 
-- The R codes also make use of functions from the [`tidyverse`](https://www.tidyverse.org/) family of R packages [@wickham_r_2017; @wickham_welcome_2019]. Users are required to install the tidyverse collection of packages in order to run (some parts of) the code.
+- The R codes also make use of functions from the [`tidyverse`](https://www.tidyverse.org/) family of R packages [@wickham_r_2017; @wickham_welcome_2019] and the [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html) package [@brewer2014]. Users are required to install these packages in order to run the codes.
 
 - The [`data`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/tree/main/data) directory contains the main (pre-processed) linguistic data, annotation notes for the gestural data, and the derived tabular data.
 
