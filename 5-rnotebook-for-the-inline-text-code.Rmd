@@ -1,0 +1,62 @@
+---
+title: "R notebook for the inline-text code in the manuscript titled *The spatial construal of TIME in Indonesian: Evidence from language and gesture*"
+output: 
+  html_notebook:
+    fig_caption: true
+    fig_width: 6
+    fig_asp: 0.618
+    fig_retina: 2
+    dpi: 300
+    number_sections: yes
+    code_folding: hide
+author: '*by* [Gede Primahadi Wijaya Rajeg](https://udayananetworking.unud.ac.id/lecturer/880-gede-primahadi-wijaya-rajeg) <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>, [Poppy Siahaan](https://orient.phil-fak.uni-koeln.de/en/personen/wissenschaftliche-mitarbeiterinnen/dr-poppy-siahaan), & [Alice Gaby](https://research.monash.edu/en/persons/alice-gaby) <a itemprop="sameAs" content="https://orcid.org/0000-0003-4637-5513" href="https://orcid.org/0000-0003-4637-5513" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
+bibliography: "biblio.bib"
+csl: "linguistics.csl"
+link-citations: true
+---
+
+```{r echo = FALSE, include = FALSE}
+source("R-scripts/1-casasanto-el-al-reanalysis-Intro.R")
+source("R-scripts/2-data-and-method-section.R")
+source("R-scripts/3-linguistic-data-analyses.R")
+source("R-scripts/4-gesture-data-analyses.R")
+
+# helper function for determining the p-value to print in the text
+pval_print <- function(pval) {
+  
+  if (pval < 0.05 & pval > 0.01) {
+    pv <- " < 0.05"
+  } else if (pval < 0.01 & pval > 0.001) {
+    pv <- " < 0.01"
+  } else if (pval < 0.001) {
+    pv <- " < 0.001"
+  } else if (pval > 0.05 & pval < 0.1) {
+    pv <- " > 0.05"
+  } else if (pval > 0.1) {
+    pv <- " > 0.1"
+  }
+  
+  return(pv)
+  
+}
+```
+
+# INTRODUCTION
+
+...
+
+In our corpus, we also found that *waktu panjang* ‘lit. time long’ (DISTANCE) (N =`r prop1 %>% filter(node == "waktu panjang") %>% pull(n)`; `r prop1 %>% filter(node == "waktu panjang") %>% pull(perc) %>% round(1)`%) is indeed significantly more frequent than *waktu banyak* ‘lit time much’ (QUANTITY) (N=`r prop1 %>% filter(node == "waktu banyak") %>% pull(n)`; `r prop1 %>% filter(node == "waktu banyak") %>% pull(perc) %>% round(1)`%) (X^2^~goodness-of-fit~=`r round(chisq.test(phrases_group1)$statistic, 2)`, df=`r chisq.test(phrases_group1)$parameter`, *p*~two-tailed~ `r pval_print(chisq.test(phrases_group1)$p.value)`). However, the phrase *waktu banyak* (N=`r prop4 %>% filter(node == "waktu banyak") %>% pull(n)`; `r prop4 %>% filter(node == "waktu banyak") %>% pull(perc) %>% round(2)`%) itself is significantly much less frequent than its alternative *banyak waktu* ‘much time’ (N=`r prop4 %>% filter(node == "banyak waktu") %>% pull(n)`; `r prop4 %>% filter(node == "banyak waktu") %>% pull(perc) %>% round(1)`%) (X^2^~goodness-of-fit~=`r round(chisq.test(phrases_group4)$statistic, 3)`, df=`r chisq.test(phrases_group4)$parameter`, *p*~two-tailed~ `r pval_print(chisq.test(phrases_group4)$p.value)`).
+
+...
+
+When compared to the DISTANCE expression *waktu panjang* (N=`r prop2 %>% filter(node == "waktu panjang") %>% pull(n)`; `r prop2 %>% filter(node == "waktu panjang") %>% pull(perc) %>% round(1)`%), the alternative QUANTITY expression *banyak waktu* (N=`r prop2 %>% filter(node == "banyak waktu") %>% pull(n)`; `r prop2 %>% filter(node == "banyak waktu") %>% pull(perc) %>% round(1)`%) then turns out to be significantly more frequent (X^2^~goodness-of-fit~=`r round(chisq.test(phrases_group2)$statistic, 3)`, df=`r chisq.test(phrases_group2)$parameter`, *p*~two-tailed~ `r pval_print(chisq.test(phrases_group2)$p.value)`). 
+
+...
+
+We instead show that, if the more frequent *banyak waktu* (N=`r prop2 %>% filter(node == "banyak waktu") %>% pull(n)`) is chosen over *waktu banyak* (N=`r prop4 %>% filter(node == "waktu banyak") %>% pull(n)`) and compared it with *waktu panjang* (N=`r prop2 %>% filter(node == "waktu panjang") %>% pull(n)`), or even with the alternative form *panjang waktu* (N=`r prop3 %>% filter(node == "panjang waktu") %>% pull(n)`), Indonesian language prefers QUANTITY over DISTANCE.
+
+...
+
+# DATA AND METHOD
+
+
