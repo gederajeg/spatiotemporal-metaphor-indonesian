@@ -153,7 +153,7 @@ Gesture: rounding hand with parabolic movement from left to right<sequential-lat
 
 
 Speaker: Once (https://video.medcom.id/just-alvin/ybDElw0k-just-alvin-golden-voice-4)
-Text: lalu, <w>generasi berikutnya</w> bikin lagu sendiri
+Text: lalu, <w>generasi berikutnya</w> pikir eh kalau gitu gue juga bisa kayak the Beatles
 Time: 08:12-08:16
 Gesture: rounding hand move from the front of the body towards the self/body together with closing the hand<sequential-sagittal/><righthand/><toward/><congruent/><speaker="Once"/>[a]
 Note: The pointing to the further front after this toward-the body gesture suggest the the pointed space (i.e., the Beatles era relative to the future generation) refers to the past relative to the post-Beatle generation. (08:15-08:17)
