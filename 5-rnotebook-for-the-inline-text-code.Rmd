@@ -1,5 +1,5 @@
 ---
-title: "R notebook for the inline-text code in the manuscript titled *The spatial construal of TIME in Indonesian: Evidence from language and gesture*"
+title: "R notebook for the inline-text codes in the paper titled *The spatial construal of TIME in Indonesian: Evidence from language and gesture*"
 output: 
   html_notebook:
     fig_caption: true
@@ -14,6 +14,15 @@ bibliography: "biblio.bib"
 csl: "linguistics.csl"
 link-citations: true
 ---
+
+```{r global-options, message = FALSE}
+# global option chunck
+knitr::opts_chunk$set(fig.width = 6, 
+                      fig.asp = 0.618,
+                      fig.retina = 2,
+                      dpi = 300,
+                      echo = TRUE)
+```
 
 ```{r echo = FALSE, include = FALSE}
 source("R-scripts/1-casasanto-el-al-reanalysis-Intro.R")
@@ -45,11 +54,11 @@ pval_print <- function(pval) {
 
 ...
 
-In our corpus, we also found that *waktu panjang* ‘lit. time long’ (DISTANCE) (N =`r prop1 %>% filter(node == "waktu panjang") %>% pull(n)`; `r prop1 %>% filter(node == "waktu panjang") %>% pull(perc) %>% round(1)`%) is indeed significantly more frequent than *waktu banyak* ‘lit time much’ (QUANTITY) (N=`r prop1 %>% filter(node == "waktu banyak") %>% pull(n)`; `r prop1 %>% filter(node == "waktu banyak") %>% pull(perc) %>% round(1)`%) (X^2^~goodness-of-fit~=`r round(chisq.test(phrases_group1)$statistic, 2)`, df=`r chisq.test(phrases_group1)$parameter`, *p*~two-tailed~ `r pval_print(chisq.test(phrases_group1)$p.value)`). However, the phrase *waktu banyak* (N=`r prop4 %>% filter(node == "waktu banyak") %>% pull(n)`; `r prop4 %>% filter(node == "waktu banyak") %>% pull(perc) %>% round(2)`%) itself is significantly much less frequent than its alternative *banyak waktu* ‘much time’ (N=`r prop4 %>% filter(node == "banyak waktu") %>% pull(n)`; `r prop4 %>% filter(node == "banyak waktu") %>% pull(perc) %>% round(1)`%) (X^2^~goodness-of-fit~=`r round(chisq.test(phrases_group4)$statistic, 3)`, df=`r chisq.test(phrases_group4)$parameter`, *p*~two-tailed~ `r pval_print(chisq.test(phrases_group4)$p.value)`).
+In our corpus, we also found that *waktu panjang* ‘lit. time long’ (DISTANCE) (N =`r prop1 %>% filter(node == "waktu panjang") %>% pull(n)`; `r prop1 %>% filter(node == "waktu panjang") %>% pull(perc) %>% round(1)`%) is indeed significantly more frequent than *waktu banyak* ‘lit time much’ (QUANTITY) (N=`r prop1 %>% filter(node == "waktu banyak") %>% pull(n)`; `r prop1 %>% filter(node == "waktu banyak") %>% pull(perc) %>% round(1)`%) (X^2^~goodness-of-fit~=`r round(chisq.test(phrases_group1)$statistic, 2)`, *df*=`r chisq.test(phrases_group1)$parameter`, *p*~two-tailed~ `r pval_print(chisq.test(phrases_group1)$p.value)`). However, the phrase *waktu banyak* (N=`r prop4 %>% filter(node == "waktu banyak") %>% pull(n)`; `r prop4 %>% filter(node == "waktu banyak") %>% pull(perc) %>% round(2)`%) itself is significantly much less frequent than its alternative *banyak waktu* ‘much time’ (N=`r prop4 %>% filter(node == "banyak waktu") %>% pull(n)`; `r prop4 %>% filter(node == "banyak waktu") %>% pull(perc) %>% round(1)`%) (X^2^~goodness-of-fit~=`r round(chisq.test(phrases_group4)$statistic, 3)`, *df*=`r chisq.test(phrases_group4)$parameter`, *p*~two-tailed~ `r pval_print(chisq.test(phrases_group4)$p.value)`).
 
 ...
 
-When compared to the DISTANCE expression *waktu panjang* (N=`r prop2 %>% filter(node == "waktu panjang") %>% pull(n)`; `r prop2 %>% filter(node == "waktu panjang") %>% pull(perc) %>% round(1)`%), the alternative QUANTITY expression *banyak waktu* (N=`r prop2 %>% filter(node == "banyak waktu") %>% pull(n)`; `r prop2 %>% filter(node == "banyak waktu") %>% pull(perc) %>% round(1)`%) then turns out to be significantly more frequent (X^2^~goodness-of-fit~=`r round(chisq.test(phrases_group2)$statistic, 3)`, df=`r chisq.test(phrases_group2)$parameter`, *p*~two-tailed~ `r pval_print(chisq.test(phrases_group2)$p.value)`). 
+When compared to the DISTANCE expression *waktu panjang* (N=`r prop2 %>% filter(node == "waktu panjang") %>% pull(n)`; `r prop2 %>% filter(node == "waktu panjang") %>% pull(perc) %>% round(1)`%), the alternative QUANTITY expression *banyak waktu* (N=`r prop2 %>% filter(node == "banyak waktu") %>% pull(n)`; `r prop2 %>% filter(node == "banyak waktu") %>% pull(perc) %>% round(1)`%) then turns out to be significantly more frequent (X^2^~goodness-of-fit~=`r round(chisq.test(phrases_group2)$statistic, 3)`, *df*=`r chisq.test(phrases_group2)$parameter`, *p*~two-tailed~ `r pval_print(chisq.test(phrases_group2)$p.value)`). 
 
 ...
 
@@ -59,4 +68,54 @@ We instead show that, if the more frequent *banyak waktu* (N=`r prop2 %>% filter
 
 # DATA AND METHOD
 
+...
 
+n-grams (i.e., uninterrupted sequences of n-words) that, as a starter, centred around three Indonesian TIME words, namely *waktu* ‘time’ (N=`r prettyNum(pull(filter(temporal_terms, match %in% "waktu"), n), big.mark = ",")`), *masa* ‘era; period’ (N=`r prettyNum(pull(filter(temporal_terms, match %in% "masa"), n), big.mark = ",")`), and *zaman* ‘era; period’ (N=`r prettyNum(pull(filter(temporal_terms, match %in% "zaman"), n), big.mark = ",")`)
+
+...
+
+```{r table-1}
+ngram_tables %>% 
+  mutate(type_of_ngrams = c("2-gram", "2-gram", "3-gram", "3-gram", "4-gram", "4-gram"),
+         ngram = str_c("*", ngram, "*", sep = ""),
+         ngram = str_replace_all(ngram, "_", " "),
+         ngram = str_replace_all(ngram, "\\b(pada|mendatang|beberapa|lalu|dalam|dekat|seiring|perkembangan|maju)\\b", "__\\1__"),
+         n = prettyNum(n, big.mark = ",")) %>% 
+  rename(`N-Grams Patterns` = ngram,
+         `Types of N-Grams` = type_of_ngrams,
+         `Frequency of the N-Grams Patterns` = n) %>%
+  select(1, 3, 2) %>% 
+  knitr::kable(caption = "Snippet of the Metaphorical N-Grams Database")
+```
+...
+
+# RESULTS AND DISCUSSION
+
+## Linguistic Data
+
+...
+
+```{r ego-rp-deictic-model}
+me_mt_perc <- round(prop.table(ego_rp_deictic_model)*100)
+me_mt_chisq <- chisq.test(ego_rp_deictic_model)
+```
+
+
+[Figure \@ref(fig:fig-1)](#fig-1) below visualises the proportion of the Moving Ego (`r me_mt_perc[names(me_mt_perc) == "moving_ego"]`%; N=`r ego_rp_deictic_model[names(ego_rp_deictic_model) == "moving_ego"]`) and Moving Time (`r me_mt_perc[names(me_mt_perc) == "moving_time"]`%; N=`r prettyNum(ego_rp_deictic_model[names(ego_rp_deictic_model) == "moving_time"], big.mark = ",")`) models in the 2-gram data across the three target TIME words. We filtered the patterns using regular expressions capturing the base words for some Indonesian MOTION lexical items referring to ‘pass’, ‘come’, ‘go’, ‘cross’, ‘enter’, ‘exit’, ‘walk on’. The Moving Time model is significantly more frequent than the Moving Ego model in the 2-gram data (X^2^~goodness-of-fit~=`r round(me_mt_chisq$statistic, 3)`, *df*=`r me_mt_chisq$parameter`, *p*~two-tailed~ `r pval_print(me_mt_chisq$p.value)`).
+
+...
+
+```{r fig-1, fig.cap = "Proportion of the Moving Time and the Moving Ego models in the 2-gram databases"}
+ego_rp_bp <- barplot(prop.table(ego_rp_deictic_model), 
+                     names.arg = c("Moving Time", "Moving Ego"), 
+                     main = "2-grams evoking the Moving Time and the Moving Ego models\n(combined data across the studied TIME words)", 
+                     ylab = "Proportion",
+                     col = "#D3DDDC",
+                     xlab = "Axis",
+                     sub = "Numbers inside the bars are the raw frequencies.")
+text(ego_rp_bp, c(.2, .05), labels = paste("N=", prettyNum(ego_rp_deictic_model, big.mark = ","), sep = ""))
+```
+
+The prevalence of the Moving Time model could be motivated by the lexicalised and conventional metaphorical expressions in Indonesian as the terms for PAST (*waktu lalu* ‘past, time ago; lit. time passing’ [N=`r moving_time_ALL_2gr %>% slice_max(order_by = n) %>% pull(n) %>% prettyNum(big.mark = ",")`] and *masa lalu* ‘past; lit. period passing’ [N=`r moving_time_ALL_2gr %>% filter(ngram == "masa_lalu") %>% pull(n) %>% prettyNum(big.mark = ",")`]) and FUTURE (*masa mendatang* ‘future; lit. period coming’ [N=`r moving_time_ALL_2gr %>% filter(ngram == "masa_mendatang") %>% pull(n) %>% prettyNum(big.mark = ",")`]). None of the boldfaced source-domain items ever occur in the Moving Ego model in the 2-gram data. The predominant 2-gram patterns for the Moving Ego are characterised by different forms of motion verbs. The five most frequent ones are *memasuki* ‘enter’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "memasuki") %>% pull(n)`), *menjalani* ‘undergo; lit. walk on’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "menjalani") %>% pull(n)`), *melewati* ‘pass sth.’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "melewati") %>% pull(n)`), *masuk* ‘enter’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "masuk") %>% pull(n)`), and *melalui* ‘pass through’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "melalui") %>% pull(n)`).
+
+...
