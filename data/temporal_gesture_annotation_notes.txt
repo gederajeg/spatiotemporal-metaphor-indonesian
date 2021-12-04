@@ -96,7 +96,7 @@ Gesture: left hand up with pointing finger repeatedly pointing down to the floor
 Speaker: Bebi Romeo (https://video.medcom.id/just-alvin/ybDElw0k-just-alvin-golden-voice-4)
 Text: Coba deh lu nyanyi gitu. Waktu <w>awal-awal</w> saya nggak pede
 Time: 01:58-02:00
-Gesture: left hand pointing finger parabolically from below points and moves to the left to the right left<deictic-lateral-past-left/><isolated-gesture/><lefthand/><leftward/><singly-congruent/><speaker="Bebi"/>
+Gesture: left hand pointing finger parabolically from below points and moves to the left to the right left<deictic-lateral-past-left/><isolated-gesture/><lefthand/><leftward/><congruent/><speaker="Bebi"/>
 
 Speaker: Bebi Romeo (https://video.medcom.id/just-alvin/ybDElw0k-just-alvin-golden-voice-4) 
 Text: Sorry ni ya, demen musik <w>tua</w>, jadi contoh-nya yang <w>tua-tua</w>
