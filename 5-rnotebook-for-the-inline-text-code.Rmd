@@ -8,12 +8,19 @@ output:
     fig_retina: 2
     dpi: 300
     number_sections: yes
-    code_folding: hide
+    code_folding: show
 author: '*by* [Gede Primahadi Wijaya Rajeg](https://udayananetworking.unud.ac.id/lecturer/880-gede-primahadi-wijaya-rajeg) <a itemprop="sameAs" content="https://orcid.org/0000-0002-2047-8621" href="https://orcid.org/0000-0002-2047-8621" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>, [Poppy Siahaan](https://orient.phil-fak.uni-koeln.de/en/personen/wissenschaftliche-mitarbeiterinnen/dr-poppy-siahaan), & [Alice Gaby](https://research.monash.edu/en/persons/alice-gaby) <a itemprop="sameAs" content="https://orcid.org/0000-0003-4637-5513" href="https://orcid.org/0000-0003-4637-5513" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon"></a>'
-bibliography: "biblio.bib"
+bibliography: "biblioReadMe.bib"
 csl: "linguistics.csl"
 link-citations: true
 ---
+
+<style type="text/css">
+  body{
+  font-family: Georgia;
+  font-size: 14pt;
+}
+</style>
 
 ```{r global-options, message = FALSE}
 # global option chunck
@@ -116,6 +123,87 @@ ego_rp_bp <- barplot(prop.table(ego_rp_deictic_model),
 text(ego_rp_bp, c(.2, .05), labels = paste("N=", prettyNum(ego_rp_deictic_model, big.mark = ","), sep = ""))
 ```
 
-The prevalence of the Moving Time model could be motivated by the lexicalised and conventional metaphorical expressions in Indonesian as the terms for PAST (*waktu lalu* ‘past, time ago; lit. time passing’ [N=`r moving_time_ALL_2gr %>% slice_max(order_by = n) %>% pull(n) %>% prettyNum(big.mark = ",")`] and *masa lalu* ‘past; lit. period passing’ [N=`r moving_time_ALL_2gr %>% filter(ngram == "masa_lalu") %>% pull(n) %>% prettyNum(big.mark = ",")`]) and FUTURE (*masa mendatang* ‘future; lit. period coming’ [N=`r moving_time_ALL_2gr %>% filter(ngram == "masa_mendatang") %>% pull(n) %>% prettyNum(big.mark = ",")`]). None of the boldfaced source-domain items ever occur in the Moving Ego model in the 2-gram data. The predominant 2-gram patterns for the Moving Ego are characterised by different forms of motion verbs. The five most frequent ones are *memasuki* ‘enter’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "memasuki") %>% pull(n)`), *menjalani* ‘undergo; lit. walk on’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "menjalani") %>% pull(n)`), *melewati* ‘pass sth.’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "melewati") %>% pull(n)`), *masuk* ‘enter’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "masuk") %>% pull(n)`), and *melalui* ‘pass through’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "melalui") %>% pull(n)`).
+The prevalence of the Moving Time model could be motivated by the lexicalised and conventional metaphorical expressions in Indonesian as the terms for past (*waktu lalu* ‘past, time ago; lit. time passing’ [N=`r moving_time_ALL_2gr %>% slice_max(order_by = n) %>% pull(n) %>% prettyNum(big.mark = ",")`] and *masa lalu* ‘past; lit. period passing’ [N=`r moving_time_ALL_2gr %>% filter(ngram == "masa_lalu") %>% pull(n) %>% prettyNum(big.mark = ",")`]) and future (*masa mendatang* ‘future; lit. period coming’ [N=`r moving_time_ALL_2gr %>% filter(ngram == "masa_mendatang") %>% pull(n) %>% prettyNum(big.mark = ",")`]). None of the boldfaced source-domain items ever occur in the Moving Ego model in the 2-gram data. The predominant 2-gram patterns for the Moving Ego are characterised by different forms of motion verbs. The five most frequent ones are *memasuki* ‘enter’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "memasuki") %>% pull(n)`), *menjalani* ‘undergo; lit. walk on’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "menjalani") %>% pull(n)`), *melewati* ‘pass sth.’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "melewati") %>% pull(n)`), *masuk* ‘enter’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "masuk") %>% pull(n)`), and *melalui* ‘pass through’ (N=`r moving_ego_ALL_2gr_lu %>% slice_max(order_by = n, n = 5) %>% filter(lu == "melalui") %>% pull(n)`).
 
 ...
+
+The use of *belakang* in the construction [TIME NOUN + *belakang*] ‘*previous/last/past* TIME NOUN’ is only attested with `r timewords_belakang %>% count(ngram, sort = TRUE) %>% nrow` types (N=`r timewords_belakang %>% count(ngram, sort = TRUE) %>% pull(n) %>% sum()`) co-occurring with more specific temporal nouns (i.e., *tahun/bulan/sepekan __belakang__* ‘*past* year/month/week’).
+
+...
+
+## Co-speech Gesture Data
+
+...
+
+(...) we identified (i) `r deictic_gestures_n` (`r round(prop.table(deictic_vs_sequential) * 100)[names(round(prop.table(deictic_vs_sequential) * 100)) == "deictic"]`%) gestures accompanying expressions referring to deictic time, and (ii) `r sequential_gestures_n` (`r round(prop.table(deictic_vs_sequential) * 100)[names(round(prop.table(deictic_vs_sequential) * 100)) == "sequential"]`%) gestures co-occurring with expressions for sequential time (*p*~Exact~ ~Binomial~ ~test;~ ~two~~-~~tailed~ `r pval_print(binom.test(x = deictic_gestures_n, n = sum(deictic_vs_sequential), p = 0.5)$p.value)`). As for handedness, in the deictic-time gestures, `r handedness_deictic_count[names(handedness_deictic_count) == "righthand"]` (`r round(prop.table(handedness_deictic_count) * 100)[names(round(prop.table(handedness_deictic_count) * 100)) == "righthand"]`%) were produced with the right hand, `r handedness_deictic_count[names(handedness_deictic_count) == "lefthand"]` (`r round(prop.table(handedness_deictic_count) * 100)[names(round(prop.table(handedness_deictic_count) * 100)) == "lefthand"]`%) with the left hand, and `r handedness_deictic_count[names(handedness_deictic_count) == "bothhands"]` (`r round(prop.table(handedness_deictic_count) * 100)[names(round(prop.table(handedness_deictic_count) * 100)) == "bothhands"]`%) bimanually (i.e., with both hands) (*p*~Exact~ ~Multinomial~ ~test~ `r pval_print(dmultinom(handedness_deictic_count, prob = rep(1/length(handedness_deictic_count), length(handedness_deictic_count))))`).
+
+...
+
+In terms of the directionality (see [Figure \@ref(fig:fig-2)](#fig-2)), of the `r deictic_gestures_n` gestures for deictic time, `r axes_deictic_sagittal_sum` (`r axes_deictic_all_proportion[names(axes_deictic_all_proportion) == "sagittal"]`%) gestures were produced along the sagittal axis (`r axes_deictic_sagittal_type_df %>% filter(directionality == "backward") %>% pull(n)` backward, `r axes_deictic_sagittal_type_df %>% filter(directionality == "forward") %>% pull(n)` forward, `r axes_deictic_sagittal_type_df %>% filter(directionality == "downward") %>% pull(n)` downward ), `r axes_deictic_lateral_sum` (`r axes_deictic_all_proportion[names(axes_deictic_all_proportion) == "lateral"]`%) gestures were along the lateral axis (`r axes_deictic_lateral_type_df %>% filter(directionality == "leftward") %>% pull(n)` leftward, `r axes_deictic_lateral_type_df %>% filter(directionality == "rightward") %>% pull(n)` rightward), and `r axes_deictic_combined_sum` (`r axes_deictic_all_proportion[names(axes_deictic_all_proportion) == "combined"]`%) gestures combined the two axes (`r axes_deictic_combined_type_df %>% filter(str_detect(directionality, "^back.+left")) %>% pull(n)` backward-leftward, `r axes_deictic_combined_type_df %>% filter(str_detect(directionality, "^forw.+left")) %>% pull(n)` forward-leftward, `r axes_deictic_combined_type_df %>% filter(str_detect(directionality, "^forw.+right")) %>% pull(n)` forward-rightward, `r axes_deictic_combined_type_df %>% filter(str_detect(directionality, "^back.+right")) %>% pull(n)` backward-rightward). Overall, more gestures are using the combined and lateral axes than the sagittal one for deictic time (*p*~Exact~ ~Multinomial~ ~test~ `r pval_print(dmultinom(axes_deictic_all, prob = rep(1/length(axes_deictic_all), length(axes_deictic_all))))`). Furthermore, `r length(unique(axes_deictic_combined_speakers))` different speakers contributed to the `r unlist(tally(axes_deictic_combined_type_df, n))` occurrences of the combined-axis gestures, though most of them (N=`r table(axes_deictic_combined_speakers)[table(axes_deictic_combined_speakers) == max(table(axes_deictic_combined_speakers))]`; `r round(prop.table(table(axes_deictic_combined_speakers))*100)[round(prop.table(table(axes_deictic_combined_speakers))*100) == max(round(prop.table(table(axes_deictic_combined_speakers))*100))]`%) come from the host of the talk show (Alvin Adam). Of the `r sequential_gestures_n` gestures accompanying the sequential-time utterances, there are more gestures produced along the lateral axis (N=`r sequential_lateral`; `r round(prop.table(sequential_axes) * 100)[names(round(prop.table(sequential_axes) * 100)) == "lateral"]`%) (`r sequential_directionality_df %>% filter(axes == "lateral", directionality == "rightward") %>% pull(n)` rightward, `r sequential_directionality_df %>% filter(axes == "lateral", directionality == "leftward") %>% pull(n)` leftward) than along the sagittal one (N=`r sequential_sagittal`; `r round(prop.table(sequential_axes) * 100)[names(round(prop.table(sequential_axes) * 100)) == "sagittal"]`%) (*p*~Exact~ ~Binomial~ ~test;~ ~one~~-~~tailed~ `r pval_print(binom.test(x = sequential_lateral, n = sequential_gestures_n, alternative = "greater")$p.value)`)
+
+```{r fig-2, fig.cap = "The directionality of the gestures across the three axes for deictic and sequential times"}
+plot_df1 %>% 
+  ggplot(aes(x = axes, y = n, fill = directionality)) + 
+  geom_col(position = "dodge") +
+  geom_text(aes(label = n), position = position_dodge(.9), vjust = -.25) +
+  facet_wrap(~temporal_reference, scales = "free_x",
+             labeller = labeller(temporal_reference = c(deictic = paste("DEICTIC (N=", deictic_gestures_n, ")", sep = ""), sequential = paste("SEQUENTIAL (N=", sequential_gestures_n, ")", sep = "")))) +
+  labs(y = "Token frequency", x = "Axes", fill = "Directionality") +
+  scale_fill_brewer(type = "div", palette = "Spectral") +
+  scale_y_continuous(limits = c(0, 11.15), 
+                     breaks = c(0, 2, 4, 6, 8, 10)) + 
+  theme_bw()
+
+```
+
+...
+
+The Indonesian sample (i) aligns with Casasanto & Jasmin [-@casasanto_hands_2012] inasmuch that there are more sagittal gestures for deictic time (N=`r sagittal_in_deictic`) than for sequential time (N=`r sagittal_in_sequential`) (*p*~Exact~ ~Binomial~ ~test;~ ~one~~-~~tailed~ `r pval_print(binom.test(c(sagittal_in_deictic, sagittal_in_sequential), alternative = "greater")$p.value)`), but (ii) contrasts with them in that there are still more lateral gestures (N=`r all_lateral_vs_sagittal[names(all_lateral_vs_sagittal) == "lateral"]`; `r round(prop.table(all_lateral_vs_sagittal)*100)[names(round(prop.table(all_lateral_vs_sagittal)*100)) == "lateral"]`%) than the sagittal ones (N=`r all_lateral_vs_sagittal[names(all_lateral_vs_sagittal) == "sagittal"]`; `r round(prop.table(all_lateral_vs_sagittal)*100)[names(round(prop.table(all_lateral_vs_sagittal)*100)) == "sagittal"]`%) for both deictic and sequential times (*p*~Exact~ ~Binomial~ ~test;~ ~two~~-~~tailed~ `r pval_print(binom.test(all_lateral_vs_sagittal)$p.value)`).
+
+...
+
+In terms of congruency, the majority (N=`r congruency_all %>% count(congruency_simple) %>% mutate(perc = round(n/sum(n) * 100)) %>% filter(congruency_simple == "congruent") %>% pull(n)`; `r congruency_all %>% count(congruency_simple) %>% mutate(perc = round(n/sum(n) * 100)) %>% filter(congruency_simple == "congruent") %>% pull(perc)`%) of the deictic gestures were congruent (`r congruency_all %>% count(congruency_simple, axis) %>% arrange(axis) %>% filter(axis == "sagittal", congruency_simple == "congruent") %>% pull(n)`/`r congruency_all %>% count(congruency_simple, axis) %>% arrange(axis) %>% filter(axis == "sagittal") %>% pull(n) %>% sum()` sagittal, `r congruency_all %>% count(congruency_simple, axis) %>% arrange(axis) %>% filter(axis == "lateral", congruency_simple == "congruent") %>% pull(n)`/`r congruency_all %>% count(congruency_simple, axis) %>% arrange(axis) %>% filter(axis == "lateral") %>% pull(n) %>% sum()` lateral, and `r congruency_all %>% count(congruency_simple, axis) %>% arrange(axis) %>% filter(axis == "combined", congruency_simple == "congruent") %>% pull(n)`/`r congruency_all %>% count(congruency_simple, axis) %>% arrange(axis) %>% filter(axis == "combined") %>% pull(n) %>% sum()` combined-axis gestures were either doubly [N=`r congruence_combined[names(congruence_combined) == "doubly-congruent"]`] or singly [N=`r congruence_combined[names(congruence_combined) == "singly-congruent"]`] congruent)
+
+...
+
+[Figure \@ref(fig:fig-3)](#fig-3) visualises the distribution of the direction for the past and future gestures across the three axes.
+
+```{r fig-3, fig.cap = "The directionality of the gestures for past and future across the three axes"}
+plot_df %>% 
+  ggplot(aes(x = time, y = n, fill = directionality)) + 
+  geom_col(position = "dodge") +
+  geom_text(aes(label = n), position = position_dodge(.9), vjust = -.5, size = 2.85) + 
+  facet_wrap(~axis, labeller = labeller(axis = c(combined = "COMBINED", lateral = "LATERAL", sagittal = "SAGITTAL"))) +
+  labs(y = "Token frequency", x = "Deictic times", fill = "Directionality") + 
+  theme_bw() +
+  scale_y_continuous(limits = c(0, 11.15), breaks = c(0, 2, 4, 6, 8, 10)) +
+  scale_fill_brewer(type = "div", palette = "Spectral") +
+  ggsave("figures/fig-3-directionality-of-deictic-time.png", width = 8, height = 3.5, units = "in", dpi = 300)
+```
+
+```{r past-vs-present-fig-3}
+past_vs_present_in_fig_3 <- plot_df %>% 
+  group_by(time) %>% 
+  summarise(n = sum(n)) %>% 
+  mutate(perc = round(n/sum(n) * 100))
+```
+
+Firstly, [Figure \@ref(fig:fig-3)](#fig-3) shows that temporal gestures referring to past (N=`r past_vs_present_in_fig_3 %>% filter(time == "past") %>% pull(n)`; `r past_vs_present_in_fig_3 %>% filter(time == "past") %>% pull(perc)`%) are higher than those for future (N=`r past_vs_present_in_fig_3 %>% filter(time == "future") %>% pull(n)`; `r past_vs_present_in_fig_3 %>% filter(time == "future") %>% pull(perc)`%).
+
+...
+
+Focusing now on the past gestures, in the combined axes, past is predominantly construed with backward-leftward gesture (N=`r past_combined[names(past_combined) == "backward-leftward"]`; `r past_combined_prop[names(past_combined_prop) == "backward-leftward"]`%) (*p*~Exact~ ~Multinomial~ ~test~ `r pval_print(dmultinom(past_combined, prob = rep(1/length(past_combined), length(past_combined))))`) (...) `r max(handedness_backwardleftward)` (`r round(prop.table(handedness_backwardleftward)*100)[names(round(prop.table(handedness_backwardleftward)*100)) == "righthand"]`%) of these `r sum(handedness_backwardleftward)` backward-leftward gestures were performed with the right hand. `r handedness_backwardleftward_speakers %>% slice_max(order_by = n) %>% pull(speaker)`, the host of the talk show, performed the most (N=`r handedness_backwardleftward_speakers %>% slice_max(order_by = n) %>% pull(n)`; `r handedness_backwardleftward_speakers %>% slice_max(order_by = n) %>% pull(perc)`%) of these `r sum(handedness_backwardleftward)` backward-leftward gestures all with his right hand.
+
+...
+
+When construing past along the lateral axis, the speakers were more likely to produce `r names(past_lateral)[past_lateral == max(past_lateral)]` (N=`r max(past_lateral)`; `r max(past_lateral_prop)`%) than `r names(past_lateral)[past_lateral == min(past_lateral)]` (N=`r min(past_lateral)`; `r min(past_lateral_prop)`%) gestures (*p*~Exact~ ~Binomial~ ~test;~ ~one~~-~~tailed~ `r pval_print(binom.test(past_lateral, alternative = "greater")$p.value)`). 
+
+...
+
+As for the sagittal axis, backward gesture (N=`r past_sagittal[names(past_sagittal) == "backward"]`; `r past_sagittal_prop[names(past_sagittal_prop) == "backward"]`%) is more likely to accompany reference to the past than the forward gesture (N=`r past_sagittal[names(past_sagittal) == "forward"]`; `r past_sagittal_prop[names(past_sagittal_prop) == "forward"]`%) though, with such a small sample, this difference is not statistically significant (*p*~Exact~ ~Binomial~ ~test;~ ~one-tailed~ `r pval_print(binom.test(past_sagittal, alternative = "greater")$p.value)`). However, if we tally the distribution of the backward directionality in the combined axes with the one in the sagittal (N=`r backward_past_all`) and compare it with the forward direction of past (N=`r past_sagittal[str_detect(names(past_sagittal), "forward")]`), the backward gesture is strongly associated with past (*p*~Exact~ ~Binomial~ ~test;~ ~one-tailed~ `r pval_print(binom.test(c(backward_past_all, past_sagittal[str_detect(names(past_sagittal), "forward")]), alternative = "greater")$p.value)`). 
+
+...
+
+We also identified `r nrow(present_df)` gestures for utterances about the present, which is anchored with the speaker (e.g., in the space in front of the speakers). Most of these gestures (N=`r present_df %>% filter(gesture_type == "sequential-gesture") %>% nrow()`; `r present_df %>% count(gesture_type) %>% arrange(desc(n)) %>% mutate(perc = round(n/sum(n) * 100)) %>% filter(gesture_type == "sequential-gesture") %>% pull(perc)`%) involve lateral movements toward the centre (i.e., the present): `r present_df %>% count(reached_from) %>% arrange(desc(n)) %>% filter(reached_from != "downward") %>% mutate(perc = round(n/sum(n) * 100)) %>% filter(reached_from == "left") %>% pull(n)` gestures (`r present_df %>% count(reached_from) %>% arrange(desc(n)) %>% filter(reached_from != "downward") %>% mutate(perc = round(n/sum(n) * 100)) %>% filter(reached_from == "left") %>% pull(perc)`%) begin from the left-hand side of the speaker and `r present_df %>% count(reached_from) %>% arrange(desc(n)) %>% filter(reached_from != "downward") %>% mutate(perc = round(n/sum(n) * 100)) %>% filter(reached_from == "right") %>% pull(n)` gesture (`r present_df %>% count(reached_from) %>% arrange(desc(n)) %>% filter(reached_from != "downward") %>% mutate(perc = round(n/sum(n) * 100)) %>% filter(reached_from == "left") %>% pull(perc)`%) from the right-hand side. 
+
+# REFERENCES {-}
