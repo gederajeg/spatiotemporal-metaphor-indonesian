@@ -15,3 +15,5 @@ df3 <- readr::read_tsv("data/zaman_4grams.txt") %>%
                       "zaman_yang_semakin_maju")) %>% 
   select(ngram, n)
 (df_all <- bind_rows(df1, df2, df3))
+
+ngram_tables <- df_all

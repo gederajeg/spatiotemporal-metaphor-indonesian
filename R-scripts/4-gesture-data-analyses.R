@@ -23,7 +23,6 @@ sequential_df <- str_subset(gesture_notes, "<sequential-[sl]") %>%
 (sequential_axes <- c(sequential_lateral, sequential_sagittal))
 (names(sequential_axes) <- c("lateral", "sagittal"))
 sequential_axes
-round(prop.table(sequential_axes)*100)
 round(prop.table(sequential_axes) * 100)
 rev(sort(table(sequential_directionality_type)))
 sequential_directionality_df <- tibble(directionality = sequential_directionality_type) %>% 
@@ -113,7 +112,7 @@ axes_deictic_all <- c(lateral = axes_deictic_lateral_sum,
 
 ### 1.4 proportion of axes for deictic all
 axes_deictic_all
-round(prop.table(axes_deictic_all) * 100)
+axes_deictic_all_proportion <- round(prop.table(axes_deictic_all) * 100)
 
 ### 1.5 statistical test for the axes in the deictic time
 axes_deictic_all
@@ -305,7 +304,7 @@ past_combined <- pull(filter(plot_df, axis == "combined", time == "past"), n)
 (names(past_combined) <- pull(filter(plot_df, axis == "combined", time == "past"), directionality))
 past_combined
 prop.table(past_combined)
-round(prop.table(past_combined)*100)
+past_combined_prop <- round(prop.table(past_combined)*100)
 dmultinom(past_combined, prob = rep(1/length(past_combined), length(past_combined)))
 dmultinom(past_combined, prob = rep(1/length(past_combined), length(past_combined))) < 0.001
 
@@ -326,7 +325,7 @@ handedness_backwardleftward
 binom.test(handedness_backwardleftward)
 
 ## handedness and speakers for BACKWARD-LEFTWARD - PAST gesture
-congruency_all %>% 
+handedness_backwardleftward_speakers <- congruency_all %>% 
   filter(axis == 'combined', directionality == 'backward-leftward') %>% 
   count(speaker, handedness) %>% 
   mutate(perc = round(n/sum(n)*100)) %>% 
@@ -337,7 +336,7 @@ past_lateral <- pull(filter(plot_df, axis == "lateral", time == "past"), n)
 (names(past_lateral) <- pull(filter(plot_df, axis == "lateral", time == "past"), directionality))
 past_lateral
 prop.table(past_lateral)
-round(prop.table(past_lateral)*100)
+past_lateral_prop <- round(prop.table(past_lateral)*100)
 binom.test(past_lateral, alternative = "greater")
 binom.test(past_lateral, alternative = "greater")$p.value < 0.05
 
@@ -346,7 +345,7 @@ past_sagittal <- pull(filter(plot_df, axis == "sagittal", time == "past"), n)
 (names(past_sagittal) <- pull(filter(plot_df, axis == "sagittal", time == "past"), directionality))
 prop.table(past_sagittal)
 past_sagittal
-round(prop.table(past_sagittal)*100)
+(past_sagittal_prop <- round(prop.table(past_sagittal)*100))
 binom.test(past_sagittal, alternative = "greater")
 binom.test(past_sagittal, alternative = "greater")$p.value < 0.05
 
