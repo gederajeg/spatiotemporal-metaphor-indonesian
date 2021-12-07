@@ -70,13 +70,20 @@ Cluster*](https://docs.monarch.erc.monash.edu/MonARCH/aboutMonArch.html).
     [`R-scripts`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/tree/main/R-scripts)
     directory.
 
+-   The codes for the in-line computations of gestural, quantitative
+    analyses within the body text are contained in the R Markdown
+    Notebook file
+    “[5-rnotebook-for-the-inline-text-code.Rmd](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/blob/main/5-rnotebook-for-the-inline-text-code.Rmd).”
+
 -   The R codes also make use of functions from the
     [`tidyverse`](https://www.tidyverse.org/) family of R packages
     ([Wickham & Grolemund 2017](#ref-wickham_r_2017); [Wickham et al.
-    2019](#ref-wickham_welcome_2019)) and the
+    2019](#ref-wickham_welcome_2019)), the
     [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
-    package ([Neuwirth 2014](#ref-brewer2014)). Users are required to
-    install these packages in order to run the codes.
+    package ([Neuwirth 2014](#ref-brewer2014)), and
+    [corplingr](https://gederajeg.github.io/corplingr/) ([Rajeg
+    2021](#ref-corplingr)). Users are required to install these packages
+    in order to run the codes.
 
 -   The
     [`data`](https://github.com/gederajeg/spatiotemporal-metaphor-indonesian/tree/main/data)
@@ -102,7 +109,7 @@ devtools::session_info()
 #>  collate  en_US.UTF-8                 
 #>  ctype    en_US.UTF-8                 
 #>  tz       Asia/Makassar               
-#>  date     2021-12-02                  
+#>  date     2021-12-07                  
 #> 
 #> ─ Packages ───────────────────────────────────────────────────────────────────
 #>  package     * version date       lib source        
@@ -157,6 +164,16 @@ devtools::session_info()
 
 Neuwirth, Erich. 2014. *RColorBrewer: ColorBrewer palettes*.
 <https://CRAN.R-project.org/package=RColorBrewer>.
+
+</div>
+
+<div id="ref-corplingr" class="csl-entry">
+
+Rajeg, Gede Primahadi Wijaya. 2021. *<span
+class="nocase">corplingr</span>: Tidy concordances, collocates, and
+wordlist*. *Open Science Framework*.
+doi:[10.17605/OSF.IO/X8CW4](https://doi.org/10.17605/OSF.IO/X8CW4).
+<https://gederajeg.github.io/corplingr/>.
 
 </div>
 
