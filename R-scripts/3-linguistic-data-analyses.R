@@ -88,7 +88,7 @@ chisq.test(ego_rp_deictic_model)
 binom.test(ego_rp_deictic_model)
 
 ## visualisation of moving time and moving ego in linguistic analyses
-png(filename = "figures/fig-1-moving_ego_moving_time.png", width = 6.8, height = 6, units = "in", res = 300)
+# png(filename = "figures/fig-1-moving_ego_moving_time.png", width = 6.8, height = 6, units = "in", res = 300)
 ego_rp_bp <- barplot(prop.table(ego_rp_deictic_model), 
                      names.arg = c("Moving Time", "Moving Ego"), 
                      main = "2-grams evoking the Moving Time and the Moving Ego models\n(combined data across the studied TIME words)", 
@@ -99,7 +99,7 @@ ego_rp_bp <- barplot(prop.table(ego_rp_deictic_model),
 text(ego_rp_bp, c(.2, .05), labels = paste("N=", prettyNum(ego_rp_deictic_model, big.mark = ","), sep = ""))
 # abline(h = 1/2, col = "red", lty = 2)
 # text(x = 1.9, y = 0.53, labels = "Baseline proportion", col = "red")
-dev.off()
+# dev.off()
 
 ## DEPAN, BELAKANG, DATANG, MENDATANG, LALU ========
 namahari <- c("senin", "selasa",
