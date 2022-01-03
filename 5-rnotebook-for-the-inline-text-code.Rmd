@@ -15,12 +15,22 @@ csl: "linguistics.csl"
 link-citations: true
 ---
 
+
+
+
+
 <style type="text/css">
   body{
   font-family: Georgia;
   font-size: 14pt;
 }
 </style>
+
+# How to cite this R notebook
+
+Use the following to cite this R Markdown Notebook:
+
+> Rajeg, Gede Primahadi Wijaya, Poppy Siahaan & Alice Gaby. 2021. Data and R codes for analyses on the spatial construal of TIME in Indonesian language and co-speech gestures. *Open Science Framework (OSF)*. OSF. [https://doi.org/10.17605/OSF.IO/FJE6K](https://doi.org/10.17605/OSF.IO/FJE6K). [https://osf.io/fje6k/](https://osf.io/fje6k/).
 
 ```{r global-options, message = FALSE}
 # global option chunck
@@ -177,8 +187,8 @@ plot_df %>%
   labs(y = "Token frequency", x = "Deictic times", fill = "Directionality") + 
   theme_bw() +
   scale_y_continuous(limits = c(0, 11.15), breaks = c(0, 2, 4, 6, 8, 10)) +
-  scale_fill_brewer(type = "div", palette = "Spectral") +
-  ggsave("figures/fig-3-directionality-of-deictic-time.png", width = 8, height = 3.5, units = "in", dpi = 300)
+  scale_fill_brewer(type = "div", palette = "Spectral") # +
+  # ggsave("figures/fig-3-directionality-of-deictic-time.png", width = 8, height = 3.5, units = "in", dpi = 300)
 ```
 
 ```{r past-vs-present-fig-3}
