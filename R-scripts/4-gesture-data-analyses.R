@@ -149,8 +149,8 @@ plot_df1 %>%
   scale_fill_brewer(type = "div", palette = "Spectral") +
   scale_y_continuous(limits = c(0, 11.15), 
                      breaks = c(0, 2, 4, 6, 8, 10)) + 
-  theme_bw() +
-  ggsave("figures/fig-2-directionality-and-axes-for-temporal-gestures.png", width = 8, height = 4, units = "in", dpi = 300)
+  theme_bw() # +
+  # ggsave("figures/fig-2-directionality-and-axes-for-temporal-gestures.png", width = 8, height = 4, units = "in", dpi = 300)
 
 ### freq. of sagittal gestures in deictic vs. sequential time
 (sagittal_in_deictic <- axes_deictic_all[names(axes_deictic_all) == "sagittal"])
@@ -290,8 +290,8 @@ plot_df %>%
   labs(y = "Token frequency", x = "Deictic times", fill = "Directionality") + 
   theme_bw() +
   scale_y_continuous(limits = c(0, 11.15), breaks = c(0, 2, 4, 6, 8, 10)) +
-  scale_fill_brewer(type = "div", palette = "Spectral") +
-  ggsave("figures/fig-3-directionality-of-deictic-time.png", width = 8, height = 3.5, units = "in", dpi = 300)
+  scale_fill_brewer(type = "div", palette = "Spectral") # +
+  # ggsave("figures/fig-3-directionality-of-deictic-time.png", width = 8, height = 3.5, units = "in", dpi = 300)
 
 ### past vs. future utterances
 plot_df %>% 
