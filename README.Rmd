@@ -24,7 +24,12 @@ knitr::opts_chunk$set(
 
 # Overview
 
-This is an [RStudio-project](https://r4ds.had.co.nz/workflow-projects.html) repository [@rajeg_data_2021] hosting the dataset and R codes used in the paper accepted for publication in [*Linguistik Indonesia*](http://ojs.linguistik-indonesia.org/index.php/linguistik_indonesia), the official journal for [*Masyarakat Linguistik Indonesia*](https://www.mlindonesia.org/) (MLI) (the Linguistic Society of Indonesia). The paper reports on a [project on the spatio-temporal metaphor in Indonesian](https://udayananetworking.unud.ac.id/lecturer/research/880-gede-primahadi-wijaya-rajeg/spatial-construal-of-time-in-indonesian-language-and-co-speech-gestures-132) based on investigating evidence from Indonesian language corpus and spontaneous co-speech gestural data.
+This is an [RStudio-project](https://r4ds.had.co.nz/workflow-projects.html) repository [@rajeg_data_2021] hosting the dataset and R codes used in the [paper](http://ojs.linguistik-indonesia.org/index.php/linguistik_indonesia/article/view/297) published open access in [*Linguistik Indonesia*](http://ojs.linguistik-indonesia.org/index.php/linguistik_indonesia), the official journal for [*Masyarakat Linguistik Indonesia*](https://www.mlindonesia.org/) (MLI) (the Linguistic Society of Indonesia). The paper reports on a [project on the spatio-temporal metaphor in Indonesian](https://udayananetworking.unud.ac.id/lecturer/research/880-gede-primahadi-wijaya-rajeg/spatial-construal-of-time-in-indonesian-language-and-co-speech-gestures-132) based on investigating evidence from Indonesian language corpus and spontaneous co-speech gestural data.
+
+If the materials in this repository are used in your research and/or teaching, please cite the paper and the repository as follows:
+
+> How to cite the paper --- Rajeg, Gede Primahadi Wijaya, Poppy Siahaan & Alice Gaby. 2022. The Spatial Construal of TIME in Indonesian: Evidence from Language and Gesture. *Linguistik Indonesia* 40(1). 1–24. [https://doi.org/10.26499/li.v40i1.297](http://ojs.linguistik-indonesia.org/index.php/linguistik_indonesia/article/view/297).
+
 
 > How to cite this repository --- Rajeg, Gede Primahadi Wijaya, Poppy Siahaan & Alice Gaby. 2021. Data and R codes for analyses on the spatial construal of TIME in Indonesian language and co-speech gestures. *Open Science Framework (OSF)*. OSF. https://doi.org/10.17605/OSF.IO/FJE6K. https://osf.io/fje6k/.
 
